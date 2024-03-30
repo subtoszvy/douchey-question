@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>made by elliot.html</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .buttons button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      background-color: #808080;
+      color: white;
+    }
+
+    #yesBtn:hover {
+      background-color: #4CAF50;
+    }
+  </style>
+  <link rel="icon" type="image/png" href="https://fluffy-disco-os-sd-sd.netlify.app/elliot.html%20logo%202.png">
+</head>
+<body>
+  <div class="container">
+    <h1>Will you go out with me?</h1>
+    <div class="buttons">
+      <button id="yesBtn" onclick="changeColor(this)">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+  </div>
+
+  <script>
+    function changeColor(btn) {
+      btn.style.backgroundColor = "#4CAF50";
+    }
+
+    const noBtn = document.getElementById('noBtn');
+
+    noBtn.addEventListener('mouseover', () => {
+      const newX = Math.random() * (window.innerWidth - noBtn.clientWidth);
+      const newY = Math.random() * (window.innerHeight - noBtn.clientHeight);
+      noBtn.style.position = 'absolute';
+      noBtn.style.left = newX + 'px';
+      noBtn.style.top = newY + 'px';
+    });
+  </script>
+</body>
+</html>
